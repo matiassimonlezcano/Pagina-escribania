@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum - Norberto Julián Simón</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos para el encabezado */
+        header {
+            transition: background-color 0.5s ease;
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        #nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #nav-menu li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        #nav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        #nav-menu li a:hover {
+            color: #ffd700;
+        }
+
+        /* Efecto de desplazamiento para el encabezado */
+        header.nav-up {
+            position: fixed;
+            top: -100px;
+            width: 100%;
+            transition: top 0.3s;
+        }
+
+        header.nav-up nav {
+            display: none;
+        }
+
+        header.nav-up + main {
+            margin-top: 0;
+        }
+
+        header.nav-up ~ footer {
+            display: none;
+        }
+
+        main {
+            padding: 50px 20px;
+        }
+
+        section#contenido {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section#contenido h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        section#contenido ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section#contenido ul li {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Norberto Julián Simón</h1>
+        <nav id="navbar">
+            <ul id="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="curriculum.html">Currículum</a></li>
+                <li><a href="Estudio.html">Estudio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contenido">
+            <h2>Sobre el Escribano</h2>
+            <p><strong>BREVE CURRÍCULUM:</strong></p>
+            <ul>
+                <li>Egresado en el año 1995 de la Universidad Nacional del Nordeste con el título de Escribano Público Nacional</li>
+                <li>Egresado de R.A.Long H.S, Longview, Wasington, USA.</li>
+                <li>Profesor adscripto a la Cátedra de Derecho Notarial I, Facultad de Derecho UNNE</li>
+            </ul>
+            <p><strong>Disertaciones:</strong></p>
+            <ul>
+                <li>Leasing Inmobiliario, II Seminario Novel de Derecho Notarial y Registral de la Provincia de Corrientes, año 2000</li>
+                <li>Fideicomiso en la construcción Fideicomiso en la construcción ante el XIV Seminario Teórico Práctico de Derecho Notarial, Corrientes, 2007</li>
+            </ul>
+            <p><strong>Idiomas:</strong> Español, Ingles y nociones de Português.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Norberto Julián Simón. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Efecto de desplazamiento para el encabezado
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+                // Abajo
+                header.classList.add("nav-up");
+            } else {
+                // Arriba
+                header.classList.remove("nav-up");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+    </script>
+</body>
+</html>

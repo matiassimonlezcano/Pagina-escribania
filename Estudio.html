@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio - Norberto Julián Simón</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos para el encabezado */
+        header {
+            transition: background-color 0.5s ease;
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        #nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #nav-menu li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        #nav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        #nav-menu li a:hover {
+            color: #ffd700;
+        }
+
+        /* Efecto de desplazamiento para el encabezado */
+        header.nav-up {
+            position: fixed;
+            top: -100px;
+            width: 100%;
+            transition: top 0.3s;
+        }
+
+        header.nav-up nav {
+            display: none;
+        }
+
+        header.nav-up + main {
+            margin-top: 0;
+        }
+
+        header.nav-up ~ footer {
+            display: none;
+        }
+
+        main {
+            padding: 50px 20px;
+        }
+
+        section#contenido {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section#contenido p {
+            color: #333;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Norberto Julián Simón</h1>
+        <nav id="navbar">
+            <ul id="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="curriculum.html">Currículum</a></li>
+                <li><a href="Estudio.html">Estudio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contenido">
+            <p><strong>El estudio notarial atiende en general todas las cuestiones concernientes al ámbito notarial, ya sea el inmobiliario tradicional mediante la confección de instrumentos de compraventa, donaciones, poderes y contratos en general poniendo una atención especial en las operaciones vinculadas al derecho comercial, tales como constitución de fideicomisos, formación de sociedades, contratos de colaboración empresaria, acuerdos parasocietarios, contratos de leasing inmobiliario.</strong></p>
+            <p><strong>Conforme a la normativa vigente se tiene competencia para otorgar actos en toda la Provincia de Corrientes.</strong></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Norberto Julián Simón. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Efecto de desplazamiento para el encabezado
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+                // Abajo
+                header.classList.add("nav-up");
+            } else {
+                // Arriba
+                header.classList.remove("nav-up");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+    </script>
+</body>
+</html>
